@@ -1,5 +1,13 @@
 function Path=librarypath
+%% Library Path
+%  This function returns the path to the user's MATLAB package library.
+%
+% Copyright: Herianto Lim
+% http://heriantolim.com/
+% First created: 04/04/2013
+% Last modified: 04/04/2013
 
+% Replace `Herianto` with the username you use in your computer
 if isunix
 	Path=fullfile(filesep,'home','herianto');
 elseif ismac
@@ -11,6 +19,7 @@ else
 		'Platform not supported.');
 end
 
-Path=fullfile(Path,'Documents','MATLAB');
+% Path to your MATLAB package library
+Path=fullfile(Path,'Documents','MATLAB','Packages');
 
 end
