@@ -5,9 +5,9 @@ A simple version control system for MATLAB development.
 This software is licensed under the GNU General Public License (version 3).
 
 ## Setting Up
-- Put the `.m` files in the default working directory of your MATLAB.
-- Edit [librarypath.m](/librarypath.m). Change the username and the library path as instructed in the comments.
-- Structure your package library as follows:
+1. Put the `.m` files in the default working directory of your MATLAB.
+2. Edit [librarypath.m](/librarypath.m). Change the username and the library path as instructed in the comments.
+3. Structure your package library as follows:
 
 ```
 Packages             -> The folder pointed by librarypath
@@ -28,7 +28,7 @@ Packages             -> The folder pointed by librarypath
 ...
 ```
 
-- Ensure that the version numbering follows the [semantic format](https://semver.org/): `major`.`minor`.`patch`.
+4. Ensure that the version numbering follows the [semantic format](https://semver.org/): `major`.`minor`.`patch`.
 
 ## Usage
 The term *add* in the following means adding the directories and sub-directories of the specified packages into the MATLAB's search path. The term *remove* means removing the directories and sub-directories from the search path.
