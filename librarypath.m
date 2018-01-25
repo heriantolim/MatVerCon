@@ -19,7 +19,7 @@ else
 		'Platform not supported.');
 end
 
-% Path to your MATLAB package library
+% Ensure that this gives the path to your MATLAB package library
 Path=fullfile(Path,'Documents','MATLAB','Packages');
 
 end
