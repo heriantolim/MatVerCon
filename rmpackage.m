@@ -19,14 +19,14 @@ function rmpackage(varargin)
 %    packagename.
 %
 % Examples:
-%  rmpackage('common_v1.0.3','research','asdf_v1.0.21') removes the package
+%  rmpackage('MatCommon_v1.0.3','research','asdf_v1.0.21') removes the package
 %    'common' with version '1.0.3', 'research' with any version, and 'asdf'
 %    with version '1.0.21'.
 %
 % See also: addpackage.
 %
-% Copyright: Herianto Lim
-% http://heriantolim.com/
+% Copyright: Herianto Lim (http://heriantolim.com)
+% Licensing: GNU General Public License v3.0
 % First created: 04/04/2013
 % Last modified: 05/04/2013
 
@@ -41,14 +41,14 @@ if numPackages==0
 	end
 else
 	assert(all(cellfun(@ischar,varargin) & cellfun(@isrow,varargin)),...
-		'MatlabVerCon:rmpackage:InvalidInput',...
+		'MatVerCon:rmpackage:InvalidInput',...
 		'All inputs must be a string scalar.');
 	for i=1:numPackages
 		% Read package name
 		package=regexp(varargin{i},...
 			'^([a-zA-Z0-9]+)(?:_v[1-9][0-9]*\.?[0-9]*\.?[0-9]*)?$','tokens');
 		if isempty(package)
-			error('MatlabVerCon:rmpackage:InvalidInput',...
+			error('MatVerCon:rmpackage:InvalidInput',...
 				'The input strings must follow the required format.');
 		else
 			package=package{1}{1};

@@ -19,14 +19,14 @@ function addpackage(varargin)
 %    and a version of 1.2.3.
 %
 % Examples:
-%  addpackage('common_v1.0.3','research','asdf_v1.0.21') adds the package
+%  addpackage('MatCommon_v1.0.3','research','asdf_v1.0.21') adds the package
 %    'common' with version '1.0.3', 'research' with the latest available
 %    version, and asdf with version '1.0.21'.
 %
 % See also: rmpackage.
 %
-% Copyright: Herianto Lim
-% http://heriantolim.com/
+% Copyright: Herianto Lim (http://heriantolim.com)
+% Licensing: GNU General Public License v3.0
 % First created: 04/04/2013
 % Last modified: 08/02/2016
 
@@ -35,7 +35,7 @@ if numPackages==0
 	return
 end
 assert(all(cellfun(@ischar,varargin) & cellfun(@isrow,varargin)),...
-	'MatlabVerCon:addpackage:InvalidInput',...
+	'MatVerCon:addpackage:InvalidInput',...
 	'All inputs must be a string scalar.');
 
 for i=1:numPackages
@@ -43,7 +43,7 @@ for i=1:numPackages
 	package=regexp(varargin{i},...
 		'^([a-zA-Z0-9]+)(?:_v[1-9][0-9]*\.[0-9]+\.[0-9]+)?$','tokens');
 	if isempty(package)
-		error('MatlabVerCon:addpackage:InvalidInput',...
+		error('MatVerCon:addpackage:InvalidInput',...
 			'The input strings must follow the required format.');
 	else
 		package=package{1}{1};
@@ -53,7 +53,7 @@ for i=1:numPackages
 	listing=dir(fullfile(librarypath,package));
 	numListings=numel(listing);
 	if numListings==0
-		warning('MatlabVerCon:addpackage:PackageNotFound',...
+		warning('MatVerCon:addpackage:PackageNotFound',...
 			'The package %s does not exist.',package);
 		continue
 	end
@@ -74,7 +74,7 @@ for i=1:numPackages
 			end
 		end
 		if k==0
-			warning('MatlabVerCon:addpackage:MissingVersion',...
+			warning('MatVerCon:addpackage:MissingVersion',...
 				'The package %s does not contain any versioned subfolder.',package);
 			continue
 		end

@@ -1,4 +1,4 @@
-# MatlabVerCon
+# MatVerCon
 A simple version control system for MATLAB development.
 
 ## Licensing

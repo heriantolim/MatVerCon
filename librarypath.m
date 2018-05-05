@@ -2,8 +2,8 @@ function Path=librarypath
 %% Library Path
 %  This function returns the path to the user's MATLAB package library.
 %
-% Copyright: Herianto Lim
-% http://heriantolim.com/
+% Copyright: Herianto Lim (http://heriantolim.com)
+% Licensing: GNU General Public License v3.0
 % First created: 04/04/2013
 % Last modified: 04/04/2013
 
@@ -15,7 +15,7 @@ elseif ismac
 elseif ispc
 	Path=fullfile('C:','Users','Herianto');
 else
-	error('MatlabVerCon:librarypath:UnexpectedCase',...
+	error('MatVerCon:librarypath:UnexpectedCase',...
 		'Platform not supported.');
 end
 
